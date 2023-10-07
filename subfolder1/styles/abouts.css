@@ -1,0 +1,212 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.bg {
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url('bahay.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.menu {
+    background-color: rgba(255, 211, 66, 0.5); 
+    padding: 10px; 
+    border-radius: 10px; 
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: antiquewhite;
+    font-size: 18px;
+    font-weight: bold;
+    font-family:'Times New Roman', Times, serif;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+    border-radius: 50px;
+}
+
+.menu ul li a:hover {
+    color: #ffd722;
+    background-color: rgba(250, 235, 215, 0.226);
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.menu ul li a:active {
+    opacity: 0.8;
+    color: #ffdc42;
+    background-color: antiquewhite;
+}
+
+.main {
+    text-align: center;
+    color: antiquewhite; 
+    font-size: 60px; 
+    margin: 30px 0 0px;  
+    line-height: 1.42857143;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'monikaitalic';
+}
+
+.slider {
+    height: 250px;
+    margin: auto;
+    position: relative;
+    width: 90%;
+    display: grid;
+    place-items: center;
+    overflow: hidden; 
+    display: flex;
+    margin-top: 180px;
+}
+
+.slider::before,
+.slider::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px; 
+    background: linear-gradient(to left, transparent, rgba(0, 0, 0, 0.9));
+    z-index: 1;
+    height: 100%;
+}
+
+.slider::after {
+    right: 0;
+    left: auto;
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.9));
+}
+
+.slide-img {
+    display: flex;
+    width: calc(250px * 18);
+    animation: scroll 30s linear infinite; 
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.5s; 
+}
+
+.slide-img:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-250px * 9));
+    }
+}
+
+.slide {
+    height: 100%; 
+    flex: 0 0 250px; 
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    justify-content: center
+}
+
+img {
+    width: 100%;
+    height: 100%; 
+    object-fit: contain; 
+    transition: transform 0.5s, box-shadow 0.5s;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 20px rgba(255, 238, 6, 0.945);
+}
+
+p.h-first-line {
+	font-size: 40px;
+	font-family: 'Tahoma-Regular', 'sans-serif';
+	text-transform: uppercase;
+	letter-spacing: 8px;
+    text-shadow: 3px 2px 15px rgba(0, 0, 0, 1);
+}
+
+.carousel-text {
+	position: absolute;
+	z-index: 2;
+	color: antiquewhite;
+    top: 13%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+
+.carousel-text p{
+	color: antiquewhite;
+}
+
+p.h-first-line,
+.carousel-text p {
+    text-align: center;
+}
+
+.slider-text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: antiquewhite;
+    z-index: 2;
+    bottom: 100%;
+    margin-top: 5%;
+}
+
+.slider-text {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.slider-text p {
+    margin: 0;
+    font-size: 18px;
+    color: antiquewhite;
+}
+
+.footer {
+    background-color: rgba(255, 211, 66, 0.5); 
+    color: antiquewhite;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px; 
+    border-top: 2px solid #fff; 
+    font-family:'Times New Roman', Times, serif;
+}
